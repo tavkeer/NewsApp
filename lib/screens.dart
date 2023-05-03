@@ -1,0 +1,12 @@
+export 'package:get/get.dart';
+export 'package:shimmer/shimmer.dart';
+export 'package:flutter/material.dart';
+export 'package:google_fonts/google_fonts.dart';
+export 'package:news_app/widgets/custom_iconbutton.dart';
+export 'package:news_app/controllers/nav_controller.dart';
+export 'package:get/get_state_manager/get_state_manager.dart';
+export 'package:news_app/views/profile_page/profile_page.dart';
+export 'package:news_app/views/discover_page/discover_page.dart';
+export 'package:news_app/views/recommend_page/recommend_page.dart';
+export 'package:news_app/views/navigation_page/navigation_page.dart';
+export 'package:news_app/views/navigation_page/components/bottom_nav.dart';
