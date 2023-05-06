@@ -22,6 +22,7 @@ class NavigationPage extends StatelessWidget {
           margin: const EdgeInsets.only(left: 10),
           child: const CustomIconButton(icon: Icons.menu),
         ),
+        backgroundColor: Colors.transparent,
         actions: const [
           CustomIconButton(icon: Icons.search),
           SizedBox(width: 10),
@@ -29,6 +30,8 @@ class NavigationPage extends StatelessWidget {
           SizedBox(width: 10),
         ],
       ),
+      extendBody: true,
+
       bottomNavigationBar: BottomBar(
         controller: controller,
       ),

@@ -1,14 +1,13 @@
 import 'dart:convert';
-import 'package:news_app/constants.dart';
 import 'package:news_app/models/recomend_feedmodel.dart';
 import 'package:news_app/screens.dart';
 import 'package:http/http.dart' as http;
 
 class RecomendedFeedController extends GetxController {
   var loading = RxBool(true);
-  FeedModleClass? feedModelClass;
-  Articles? articles;
-  Source? source;
+  static FeedModleClass? feedModelData;
+  static Articles? articles;
+  static Source? source;
 
   fetchData() async {
     try {
@@ -17,12 +16,12 @@ class RecomendedFeedController extends GetxController {
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final jsonData = jsonDecode(response.body);
-        feedModelClass = FeedModleClass(
+        feedModelData = FeedModleClass(
           status: jsonData["status"],
           totalResults: jsonData['totalResults'],
           articles: jsonData['articles'],
         );
-        debugPrint("DataRecieved");
+        debugPrint(feedModelData!.articles![11].toString());
       } else {
         debugPrint('Request failed with status: ${response.statusCode}.');
       }

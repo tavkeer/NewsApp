@@ -4,22 +4,22 @@ class FeedModleClass {
     required this.totalResults,
     required this.articles,
   });
-  late final String status;
-  late final int totalResults;
-  late final List<dynamic> articles;
+  late final String? status;
+  late final int? totalResults;
+  late final List<dynamic>? articles;
 
   FeedModleClass.fromJson(Map<String, dynamic> json) {
     status = json['status'];
-    totalResults = json['totalResults'];
+    totalResults = json['totalResults'] ?? 0;
     articles =
         List.from(json['articles']).map((e) => Articles.fromJson(e)).toList();
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['status'] = status;
-    data['totalResults'] = totalResults;
-    data['articles'] = articles.map((e) => e.toJson()).toList();
+    data['status'] = status ?? "";
+    data['totalResults'] = totalResults ?? 0;
+    data['articles'] = articles!.map((e) => e.toJson()).toList();
     return data;
   }
 }
@@ -37,36 +37,36 @@ class Articles {
     required this.publishedAt,
     this.content,
   });
-  late final Source source;
+  late final Source? source;
   late final String? author;
-  late final String title;
+  late final String? title;
   late final String? description;
-  late final String url;
+  late final String? url;
   late final String? urlToImage;
-  late final String publishedAt;
+  late final String? publishedAt;
   late final String? content;
 
   Articles.fromJson(Map<String, dynamic> json) {
     source = Source.fromJson(json['source']);
-    author = null;
-    title = json['title'];
-    description = null;
-    url = json['url'];
-    urlToImage = null;
+    author = "";
+    title = json['title'] ?? "";
+    description = "";
+    url = json['url'] ?? "";
+    urlToImage = "";
     publishedAt = json['publishedAt'];
-    content = null;
+    content = "";
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['source'] = source.toJson();
-    data['author'] = author;
-    data['title'] = title;
-    data['description'] = description;
-    data['url'] = url;
-    data['urlToImage'] = urlToImage;
-    data['publishedAt'] = publishedAt;
-    data['content'] = content;
+    data['source'] = source!.toJson();
+    data['author'] = author ?? "";
+    data['title'] = title ?? "";
+    data['description'] = description ?? "";
+    data['url'] = url ?? "";
+    data['urlToImage'] = urlToImage ?? "";
+    data['publishedAt'] = publishedAt ?? "";
+    data['content'] = content ?? "";
     return data;
   }
 }
@@ -79,17 +79,17 @@ class Source {
     required this.name,
   });
   late final String? id;
-  late final String name;
+  late final String? name;
 
   Source.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
+    id = json['id'] ?? "";
+    name = json['name'] ?? "";
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
+    data['id'] = id ?? "";
+    data['name'] = name ?? "";
     return data;
   }
 }

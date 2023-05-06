@@ -1,5 +1,3 @@
-import 'package:news_app/controllers/recomend_feedcontroller.dart';
-
 import 'screens.dart';
 
 void main() {
@@ -22,11 +20,11 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontFamily: GoogleFonts.urbanist().fontFamily,
       ),
       home: const NavigationPage(),
     );

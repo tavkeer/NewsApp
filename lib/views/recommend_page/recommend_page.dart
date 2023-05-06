@@ -1,6 +1,4 @@
-import 'package:news_app/controllers/recomend_feedcontroller.dart';
 import 'package:news_app/screens.dart';
-import 'package:news_app/widgets/shimmer_effect.dart';
 
 class RecommendPage extends StatelessWidget {
   const RecommendPage({super.key});
@@ -9,11 +7,16 @@ class RecommendPage extends StatelessWidget {
   Widget build(BuildContext context) {
     RecomendedFeedController feedController =
         Get.put(RecomendedFeedController());
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Obx(
         () => (feedController.loading.value)
             ? const ShimmerEffect()
-            : Container(),
+            : News(
+                height: height,
+                width: width,
+              ),
       ),
     );
   }
