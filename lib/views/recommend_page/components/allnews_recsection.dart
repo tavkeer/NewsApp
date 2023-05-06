@@ -12,7 +12,6 @@ class AllNewsRocommendationSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
         itemCount: RecomendedFeedController.feedModelData!.articles!.length,
         itemBuilder: (context, index) {
           return InkWell(

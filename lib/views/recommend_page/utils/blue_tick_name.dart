@@ -19,7 +19,6 @@ class BluetickAndName extends StatelessWidget {
             color: Colors.black,
             fontFamily: GoogleFonts.urbanist().fontFamily,
             fontWeight: FontWeight.bold,
-            fontSize: 20,
           ),
         ),
         const SizedBox(width: 10),
